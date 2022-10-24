@@ -1,0 +1,11 @@
+- Where did you run your program?
+
+  A: I ran my program on the UTA Omega server.
+
+- data1.txt was sorted correctly and did not have any valgrind errors.
+
+- neg1.txt was sorted correctly and did not have any valgrind errors.
+
+- dex1.txt was sorted correctly and did not have any valgrind errors.
+
+- student_data.txt was sorted correctly and did not result in any valgrind errors

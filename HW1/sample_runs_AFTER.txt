@@ -1,0 +1,126 @@
+gcc -g hw1_instructor.c hw1_student.c
+
+Sample run 1: 
+
+valgrind --leak-check=full ./a.out
+==161== Memcheck, a memory error detector
+==161== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==161== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==161== Command: ./a.out
+==161==
+
+---------- test_scores - started -----------
+      57      38      10      20
+get_scores_below passed the sample test.
+      22      45      30      49      38
+get_scores_below passed the sample test.
+
+get_scores_below passed the sample test.
+
+Passed tests:  3 out of 3
+
+---------- test_scores - finished -----------
+
+---------- test_2D_array - started -----------
+Enter the filename: data2D_3_5.txt
+
+   |       0|       1|       2|       3|       4|
+-------------------------------------------------
+  0|       7|       1|   90123|       2|      10|
+  1|       5|      12|       4|      78|       1|
+  2|      -3|       6|      32|    1234|       3|
+min value: -3, max value: 90123
+
+---------- test_2D_array - finished -----------
+==161==
+==161== HEAP SUMMARY:
+==161==     in use at exit: 0 bytes in 0 blocks
+==161==   total heap usage: 10 allocs, 10 frees, 6,736 bytes allocated
+==161==
+==161== All heap blocks were freed -- no leaks are possible
+==161==
+==161== For lists of detected and suppressed errors, rerun with: -s
+==161== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+Sample run 2:
+
+valgrind --leak-check=full ./a.out
+==162== Memcheck, a memory error detector
+==162== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==162== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==162== Command: ./a.out
+==162==
+
+---------- test_scores - started -----------
+      57      38      10      20
+get_scores_below passed the sample test.
+      22      45      30      49      38
+get_scores_below passed the sample test.
+
+get_scores_below passed the sample test.
+
+Passed tests:  3 out of 3
+
+---------- test_scores - finished -----------
+
+---------- test_2D_array - started -----------
+Enter the filename: data2D_7_2.txt
+
+   |       0|       1|
+----------------------
+  0|      11|      32|
+  1|      98|       6|
+  2|       3|       9|
+  3|       7|       3|
+  4|      56|   45354|
+  5|       5|       3|
+  6|       8|       9|
+min value: 3, max value: 45354
+
+---------- test_2D_array - finished -----------
+==162==
+==162== HEAP SUMMARY:
+==162==     in use at exit: 0 bytes in 0 blocks
+==162==   total heap usage: 14 allocs, 14 frees, 6,764 bytes allocated
+==162==
+==162== All heap blocks were freed -- no leaks are possible
+==162==
+==162== For lists of detected and suppressed errors, rerun with: -s
+==162== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+Sample run 3: 
+
+valgrind --leak-check=full ./a.out
+
+==163== Memcheck, a memory error detector
+==163== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==163== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==163== Command: ./a.out
+==163==
+
+---------- test_scores - started -----------
+      57      38      10      20
+get_scores_below passed the sample test.
+      22      45      30      49      38
+get_scores_below passed the sample test.
+
+get_scores_below passed the sample test.
+
+Passed tests:  3 out of 3
+
+---------- test_scores - finished -----------
+
+---------- test_2D_array - started -----------
+Enter the filename: sd
+File could not be opened.
+==163==
+==163== HEAP SUMMARY:
+==163==     in use at exit: 0 bytes in 0 blocks
+==163==   total heap usage: 5 allocs, 5 frees, 2,556 bytes allocated
+==163==
+==163== All heap blocks were freed -- no leaks are possible
+==163==
+==163== For lists of detected and suppressed errors, rerun with: -s
+==163== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -1,0 +1,118 @@
+compile:
+gcc -g bucket_sort.c list.c -lm
+run:
+valgrind --leak-check=full ./a.out
+
+
+Program output (from one program execution):
+You will get a different number instead of the 633 below, and that is fine
+
+valgrind --leak-check=full ./a.out
+
+==633== Memcheck, a memory error detector
+==633== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==633== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==633== Command: ./a.out
+==633==
+==633== error calling PR_SET_PTRACER, vgdb might block
+This program will read a file name, load data for an array from there and print the sorted array.
+The array is sorted using bucket sort.
+This will be repeated as long as the user wants.
+
+Enter the filename: badName.txt
+File could not be opened.
+
+Do you want to repeat? Enter 1 to repeat, or 0 to stop) 1
+
+Enter the filename: data1.txt
+
+ array:     9,    1,    7,    5,    8,    2,
+
+Bucketsort: min=1, max = 9, N=6 buckets
+arr[0]=    9, idx = 5
+arr[1]=    1, idx = 0
+arr[2]=    7, idx = 4
+arr[3]=    5, idx = 2
+arr[4]=    8, idx = 4
+arr[5]=    2, idx = 0
+------ List at index 0 :
+ List items:     1        2
+ Length of above list = 2
+------ List at index 1 :
+<print_list_horiz> : List is NULL
+------ List at index 2 :
+ List items:     5
+ Length of above list = 1
+------ List at index 3 :
+<print_list_horiz> : List is NULL
+------ List at index 4 :
+ List items:     7        8
+ Length of above list = 2
+------ List at index 5 :
+ List items:     9
+ Length of above list = 1
+
+ array:     1,    2,    5,    7,    8,    9,
+
+Do you want to repeat? Enter 1 to repeat, or 0 to stop) 1
+
+Enter the filename: neg1.txt
+
+ array:     7,  -10,   90,   -4,   50,
+
+Bucketsort: min=-10, max = 90, N=5 buckets
+arr[0]=    7, idx = 0
+arr[1]=  -10, idx = 0
+arr[2]=   90, idx = 4
+arr[3]=   -4, idx = 0
+arr[4]=   50, idx = 2
+------ List at index 0 :
+ List items:   -10       -4        7
+ Length of above list = 3
+------ List at index 1 :
+<print_list_horiz> : List is NULL
+------ List at index 2 :
+ List items:    50
+ Length of above list = 1
+------ List at index 3 :
+<print_list_horiz> : List is NULL
+------ List at index 4 :
+ List items:    90
+ Length of above list = 1
+
+ array:   -10,   -4,    7,   50,   90,
+
+Do you want to repeat? Enter 1 to repeat, or 0 to stop) 1
+
+Enter the filename: dex1.txt
+
+ array: 2147483646,2147483647,-2147483648,-2147483647,
+
+Bucketsort: min=-2147483648, max = 2147483647, N=4 buckets
+arr[0]=2147483646, idx = 3
+arr[1]=2147483647, idx = 3
+arr[2]=-2147483648, idx = 0
+arr[3]=-2147483647, idx = 0
+------ List at index 0 :
+ List items: -2147483648    -2147483647
+ Length of above list = 2
+------ List at index 1 :
+<print_list_horiz> : List is NULL
+------ List at index 2 :
+<print_list_horiz> : List is NULL
+------ List at index 3 :
+ List items: 2147483646    2147483647
+ Length of above list = 2
+
+ array: -2147483648,-2147483647,2147483646,2147483647,
+
+Do you want to repeat? Enter 1 to repeat, or 0 to stop) 0
+==633==
+==633== HEAP SUMMARY:
+==633==     in use at exit: 0 bytes in 0 blocks
+==633==   total heap usage: 27 allocs, 27 frees, 22,988 bytes allocated
+==633==
+==633== All heap blocks were freed -- no leaks are possible
+==633==
+==633== For lists of detected and suppressed errors, rerun with: -s
+==633== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
