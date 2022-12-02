@@ -1,0 +1,47 @@
+ valgrind --leak-check=full ./a.out
+==30== Memcheck, a memory error detector
+==30== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==30== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==30== Command: ./a.out
+==30==
+==30== error calling PR_SET_PTRACER, vgdb might block
+Repeatedly enter two words separated by a space (e.g.: cat someone).
+ Stop with: -1 -1
+-1 -1
+
+ first: -1
+second: -1
+
+Part 2 - spell check a file.
+Enter print mode (0 - not verbose, 1 - verbose): 0
+Enter the dictionary file name: dsmall.txt
+Enter the text file name: ttt.txt
+Corrected output filename: out_ttt.txt
+
+Loading the dictionary file: dsmall.txt
+
+Dictionary has size: 10
+---> |Tttttt| (words compared when searching: 4)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 5  (computed edit distances: 10)
+     Words that give minimum distance:
+ 1 - there
+Enter your choice (from the above options): 1
+
+---> |you| (words compared when searching: 4)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 1  (computed edit distances: 10)
+     Words that give minimum distance:
+ 1 - your
+Enter your choice (from the above options): 1
+==30==
+==30== HEAP SUMMARY:
+==30==     in use at exit: 0 bytes in 0 blocks
+==30==   total heap usage: 19 allocs, 19 frees, 22,260 bytes allocated
+==30==
+==30== All heap blocks were freed -- no leaks are possible
+==30==
+==30== For lists of detected and suppressed errors, rerun with: -s
+==30== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -1,0 +1,123 @@
+valgrind --leak-check=full ./a.out
+==1270== Memcheck, a memory error detector
+==1270== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1270== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1270== Command: ./a.out
+==1270==
+==1270== error calling PR_SET_PTRACER, vgdb might block
+Repeatedly enter two words separated by a space (e.g.: cat someone).
+ Stop with: -1 -1
+-1 -1
+
+ first: -1
+second: -1
+
+Part 2 - spell check a file.
+Enter print mode (0 - not verbose, 1 - verbose): 0
+Enter the dictionary file name: dmed.txt
+Enter the text file name: text1.txt
+Corrected output filename: out_text1.txt
+
+Loading the dictionary file: dmed.txt
+
+Dictionary has size: 1003
+---> |Sam| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 1  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - am
+ 2 - same
+ 3 - sat
+ 4 - saw
+ 5 - say
+Enter your choice (from the above options): 0
+
+---> |Can| (words compared when searching: 10)
+     - OK
+
+
+---> |you| (words compared when searching: 10)
+     - OK
+
+
+---> |help| (words compared when searching: 10)
+     - OK
+
+
+---> |me| (words compared when searching: 9)
+     - OK
+
+
+---> |verifi| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 3  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - period
+ 2 - verb
+ 3 - very
+Enter your choice (from the above options): -1
+Enter correct word: verify
+
+---> |thet| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 1  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - that
+ 2 - the
+ 3 - them
+ 4 - then
+ 5 - they
+Enter your choice (from the above options): 1
+
+---> |tis| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 1  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - his
+ 2 - is
+ 3 - this
+ 4 - tie
+Enter your choice (from the above options): 3
+
+---> |ansswer| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 1  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - answer
+Enter your choice (from the above options): 1
+
+---> |is| (words compared when searching: 10)
+     - OK
+
+
+---> |visibles| (words compared when searching: 10)
+-1 - type correction
+ 0 - leave word as is (do not fix spelling)
+     Minimum distance: 4  (computed edit distances: 1003)
+     Words that give minimum distance:
+ 1 - possible
+ 2 - visit
+Enter your choice (from the above options): -1
+Enter correct word: visible
+
+---> |Thank| (words compared when searching: 8)
+     - OK
+
+
+---> |you| (words compared when searching: 10)
+     - OK
+
+==1270==
+==1270== HEAP SUMMARY:
+==1270==     in use at exit: 0 bytes in 0 blocks
+==1270==   total heap usage: 1,013 allocs, 1,013 frees, 44,039 bytes allocated
+==1270==
+==1270== All heap blocks were freed -- no leaks are possible
+==1270==
+==1270== For lists of detected and suppressed errors, rerun with: -s
+==1270== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
